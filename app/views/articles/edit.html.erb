@@ -1,19 +1,24 @@
-<h1>Edit Article</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h1>Edit Article</h1>
+      <%= form_for(@article) do |f| %>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
 
-<%= form_for(@article) do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_area :content, size: "10x10", class: 'form-control' %>
+      </div>
+
+      <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+      <p> <%= link_to "Show", article_path(@article) %> | <%= link_to "Back to list", articles_path %></p>
+    </div>
+
   </div>
 
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_area :content, size: "60x12", class: 'form-control' %>
-  </div>
-
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
-
-
-<p> <%= link_to "Show", article_path(@article) %> | <%= link_to "Back to list", articles_path %></p>
+</div>
 
