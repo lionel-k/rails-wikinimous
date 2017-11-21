@@ -11,7 +11,8 @@
         <% end %>
 
       </h1>
-      <p><%= @article.content %></p>
+      <hr>
+      <p><%= markdown(@article.content) %></p>
       <p><%= link_to "Back to list", articles_path, class: "btn btn-primary" %></p>
     </div>
   </div>
